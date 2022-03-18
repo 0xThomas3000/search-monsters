@@ -1,7 +1,7 @@
 # A basic React Web App
 
-The project's name: "monsters-rolodex".<br/>
-The project's link: [https://tuanit168.github.io/monsters-rolodex/](https://tuanit168.github.io/monsters-rolodex/)
+The project's name: "searching-monsters".<br/>
+The project's link: [https://tuanit168.github.io/searching-monsters/](https://tuanit168.github.io/searching-monsters/)
 
 ## Description
 
