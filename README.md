@@ -1,7 +1,7 @@
 # A basic React Web App
 
-The project's name: "searching-monsters".<br/>
-The project's link: [https://tuanit168.github.io/searching-monsters/](https://tuanit168.github.io/searching-monsters/)
+The project's name: "search-monsters".<br/>
+The project's link: [https://tuanit168.github.io/search-monsters/](https://tuanit168.github.io/search-monsters/)
 
 ## Description
 
