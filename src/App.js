@@ -12,17 +12,27 @@ import './App.css';
 const App = () => {
   const [searchField, setSearchField] = useState(''); // [value, setValue]
   const [monsters, setMonsters] = useState([]);
+  const [filteredMonsters, setFilterMonsters]= useState(monsters);
   const [stringField, setStringField] = useState('');
 
   console.log('render');
   
   useEffect(() => {
-    console.log('effect fired');
+    // console.log('effect fired');
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then((users) => setMonsters(users));
   }, []);
   
+  useEffect(() => {
+    const newFilteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLocaleLowerCase().includes(searchField);
+    });
+    setFilterMonsters(newFilteredMonsters);
+    console.log('effect is firing'); // To ensure we're not firing this effect whenever "stringField" value is being updated
+    // Filter through these monsters whenever either the "monsters" array changes or whenever the "searchField" changes
+  }, [monsters, searchField]);
+
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
@@ -32,11 +42,7 @@ const App = () => {
     setStringField(event.target.value);
   }
 
-  const filteredMonsters = monsters.filter((monster) => {
-    return monster.name.toLocaleLowerCase().includes(searchField);
-  });
-
-  console.log(filteredMonsters);
+  //console.log(filteredMonsters);
 
   return ( 
     <div className="App">
