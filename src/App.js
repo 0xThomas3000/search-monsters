@@ -9,9 +9,15 @@ import './App.css';
  *    + No more need for "constructor(), lifecycle methods, render() method"
  */
 const App = () => {
-  console.log('render');
   const [searchField, setSearchField] = useState(''); // [value, setValue]
-  console.log(searchField);
+  const [monsters, setMonsters] = useState([]);
+
+  console.log('render');
+
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then((users) => setMonsters(users)
+  );
   
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
@@ -21,7 +27,7 @@ const App = () => {
   return ( 
     <div className="App">
       <h1>Monsters Rolodex</h1>
-      
+
       <SearchBox
         className='monsters-search-box'
         placeholder='search monsters'
