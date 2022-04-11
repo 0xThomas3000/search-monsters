@@ -52,10 +52,12 @@ const App = () => {
         placeholder='search monsters'
         onChangeHandler={onSearchChange}
       />
-      <SearchBox
+      
+      {/* <SearchBox
         placeholder='set string'
         onChangeHandler={onStringChange}
-      />
+      />*/}
+
       <CardList monsters={filteredMonsters} />
     </div>
   );
